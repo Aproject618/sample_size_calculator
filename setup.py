@@ -8,7 +8,7 @@ setup(
     long_description_content_type='text/markdown',
     author='Ramis Sungatullin',
     author_email='aproject618@gmail.com',
-    url='https://github.com/yourusername/sample-size-calculator',
+    url='https://github.com/Aproject618/sample_size_calculator.git',
     packages=find_packages(),
     python_requires='>=3.7',
     install_requires=[

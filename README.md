@@ -23,14 +23,16 @@
 ## 📦 Установка
 
 ```bash
-pip install sample-size-calculator
+python3 -m pip install git+https://github.com/Aproject618/sample_size_calculator.git
 ```
 
 Или, если устанавливаете из исходников:
 
-git clone https://github.com/yourusername/sample-size-calculator.git
+```bash
+git clone https://github.com/Aproject618/sample_size_calculator.git
 cd sample-size-calculator
 pip install .
+```
 
 ## 🧪 Пример использования
 ```Python
