@@ -35,20 +35,22 @@ class SampleSizeCalculator:
         :param mde_percent: минимально детектируемый эффект (в процентах)
         :return: размер выборки и доверительный интервал
         """
-        mde = self.bcr * (mde_percent / 100)
+        p1 = self.bcr
+        p2 = self.bcr * (1 + mde_percent / 100)
+        mde_abs = p2 - p1
+
         z_beta = norm.ppf(self.power)
         z_alpha = norm.ppf(1 - (self.alpha / self.h_c) / 2)
         z_ci = norm.ppf(0.975)
 
-        p1 = self.bcr
-        p2 = self.bcr + mde
         pooled_var = p1 * (1 - p1) + p2 * (1 - p2)
 
-        base_n = ((z_alpha + z_beta) ** 2 * pooled_var) / (mde ** 2 * self.ratio * (1 - self.ratio))
+        base_n = ((z_alpha + z_beta) ** 2 * pooled_var) / (mde_abs ** 2 * self.ratio * (1 - self.ratio))
 
         se = base_n * 0.05  # грубая оценка стандартной ошибки
         ci = (max(base_n - z_ci * se, 0), base_n + z_ci * se)
         return base_n, ci
+
 
     def plot_curve(self, mde_range: List[int]) -> List[float]:
         """
