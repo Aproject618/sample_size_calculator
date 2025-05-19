@@ -51,15 +51,12 @@ calc = SampleSizeCalculator(
 sample_size, conf_int = calc.compute(mde_percent=10)
 print(f"Минимальный размер выборки: {int(sample_size)}")
 print(f"Доверительный интервал: {conf_int}")
-
-# Построение графика
-calc.plot_curve(mde_range=[5, 10, 15, 20, 25])
-
 ```
 
 ## 📈 Визуализация
 ```Python
-calculator.plot_sample_sizes(mde_range=[5, 10, 15, 20, 25])
+# Построение графика
+calc.plot_curve(mde_range=[5, 10, 15, 20, 25])
 ```
 [![Python](./mde_plot.png)](https://www.python.org/)
 ## 📋 Аргументы конструктора
