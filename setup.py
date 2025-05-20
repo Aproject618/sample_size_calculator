@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='sample-size-calculator',
-    version='0.1.0',
+    version='0.1.1',
     description='A Python package for calculating required sample sizes for A/B testing using z-tests',
     long_description=open('README.md', encoding='utf-8').read(),
     long_description_content_type='text/markdown',
