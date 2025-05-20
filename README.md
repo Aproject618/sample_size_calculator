@@ -40,7 +40,7 @@ pip install .
 
 ## 🧪 Пример использования
 ```Python
-from sample_size_calculator import SampleSizeCalculator
+from sample_size_calculator_packages import SampleSizeCalculator
 
 
 calculator = SampleSizeCalculator()
